@@ -2,6 +2,10 @@
 
 > VisualVM Profiler indicated that top hotspot `MainPanel.convertToInt(int)` 
 
+<div style="text-align: center;">
+	<img src="scrnshots/init.png" alt="visualVM initial screenshots" />
+</div>
+
 ## Spinning for `MainPanel.convertToInt(int)`
 
 ### Initial status 
@@ -28,7 +32,7 @@ Original method above takes around 40% of CPU usage when running continuously. I
 
 > Issue: in Java, `+` is not efficient to concatenate Strings in accumulative way, it is better to use `StringBuilder.append()` method.
 
-> Modification
+**Modification**
 
 ```Java
   private int convertToInt(int x) {
@@ -47,11 +51,11 @@ Original method above takes around 40% of CPU usage when running continuously. I
 
 > Spinning Result 
 
+<div style="text-align: center;">
+	<img src="scrnshots/modi_1.png" alt="visualVM screenshots after refactoring" />
+</div>
+
 New Result shows that under same initial board the CPU usage of `MainPanel.convertToInt(int)` method is greatly diminished, from 40% (previous) to 3.9% (current). Which gives justification for this modification. 
-
----
-
-## Spinning for `MainPanel.runContinuous()`
 
 
 
