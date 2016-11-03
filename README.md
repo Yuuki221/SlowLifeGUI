@@ -1,5 +1,11 @@
 # SlowLifeGUI
 
+> Panel Initial Status
+
+<div style="text-align: center;">
+	<img src="scrnshots/initial_panel.png" alt="initial panel setting" />
+</div>
+
 > VisualVM Profiler indicated that top hotspot `MainPanel.convertToInt(int)` 
 
 <div style="text-align: center;">
