@@ -1,8 +1,18 @@
 # SlowLifeGUI
 
+> Panel Initial Status
+
+<div style="text-align: center;">
+	<img src="scrnshots/initial_panel.png" alt="initial panel setting" />
+</div>
+
 > VisualVM Profiler indicated that top hotspot `MainPanel.convertToInt(int)` 
 
 ## Method 1: `MainPanel.convertToInt(int)`
+
+<div style="text-align: center;">
+	<img src="scrnshots/init.png" alt="visualVM initial screenshots" />
+</div>
 
 ### Initial status 
 
@@ -28,7 +38,7 @@ Original method above takes around 40% of CPU usage when running continuously. I
 
 > Issue: in Java, `+` is not efficient to concatenate Strings in accumulative way, it is better to use `StringBuilder.append()` method.
 
-> Modification
+**Modification**
 
 ```java
   private int convertToInt(int x) {
@@ -47,9 +57,9 @@ Original method above takes around 40% of CPU usage when running continuously. I
 
 > Spinning Result 
 
-New Result shows that under same initial board the CPU usage of `MainPanel.convertToInt(int)` method is greatly diminished, from 40% (previous) to 3.9% (current). Which gives justification for this modification. 
-
----
+<div style="text-align: center;">
+	<img src="scrnshots/modi_1.png" alt="visualVM screenshots after refactoring" />
+</div>
 
 ## Method2: `MainPanel.runContinuous()`
 
@@ -202,6 +212,8 @@ After I refactored run continously, I find the profiling indicate that `MainPane
 <div style="text-align: center;" >
     <img src="./srcnshots/getNumN-bad.png" alt="getNumNeighbors before refactoring" />
 </div>
+
+New Result shows that under same initial board the CPU usage of `MainPanel.convertToInt(int)` method is greatly diminished, from 40% (previous) to 3.9% (current). Which gives justification for this modification. 
 
 > After refactoring 
 
