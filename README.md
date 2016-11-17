@@ -127,13 +127,13 @@ After I review the code, I found the part of code in the method did not performi
 > Before refactoring
 
 <div style="text-align: center;">
-    <img src="./srcnshots/runcont-bad.png" alt="inital performance before modify run continously" />
+    <img src="srcnshots/runcont-bad.png" alt="inital performance before modify run continously" />
 </div>
 
 > After refactoring 
 
 <div style="text-align: center;">
-    <img src="./srcnshots/runcount-good.png" alt="performance after modify run continuously" />
+    <img src="srcnshots/runcount-good.png" alt="performance after modify run continuously" />
 </div>
 
 ### Pining Test
@@ -210,7 +210,7 @@ After I refactored run continously, I find the profiling indicate that `MainPane
 > Before refactoring
 
 <div style="text-align: center;" >
-    <img src="./srcnshots/getNumN-bad.png" alt="getNumNeighbors before refactoring" />
+    <img src="srcnshots/getNumN-bad.png" alt="getNumNeighbors before refactoring" />
 </div>
 
 New Result shows that under same initial board the CPU usage of `MainPanel.convertToInt(int)` method is greatly diminished, from 40% (previous) to 3.9% (current). Which gives justification for this modification. 
@@ -218,7 +218,7 @@ New Result shows that under same initial board the CPU usage of `MainPanel.conve
 > After refactoring 
 
 <div style="text-align: center;" >
-    <img src="./srcnshots/getNumN-good.png" alt="getNumNeighbors after refactoring" />
+    <img src="srcnshots/getNumN-good.png" alt="getNumNeighbors after refactoring" />
 </div>
 
 
