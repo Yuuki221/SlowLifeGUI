@@ -128,8 +128,8 @@ public class MainPanel extends JPanel {
 	_backupCells = new Cell[_size][_size];
 	for (int j = 0; j < _size; j++) {
 	    for (int k = 0; k < _size; k++) {
-		_backupCells[j][k] = new Cell();
-		_backupCells[j][k].setAlive(_cells[j][k].getAlive());
+	    	_backupCells[j][k] = new Cell();
+	    	_backupCells[j][k].setAlive(_cells[j][k].getAlive());
 	    }
 	}
     }
@@ -222,18 +222,18 @@ public class MainPanel extends JPanel {
     	_running = true;
     	while (_running) {
     		System.out.println("Running...");
-	    int origR = _r;
-	    try {
-		Thread.sleep(20);
-	    } catch (InterruptedException iex) { }
-	    for (int j=0; j < _maxCount; j++) {
-	    	_r += (j % _size) % _maxCount;
-		_r += _maxCount;
-	    }
-	    _r = origR;
-	    backup();
-	    calculateNextIteration();
-	}
+    		int origR = _r;
+    		try {
+    			Thread.sleep(20);
+    		} catch (InterruptedException iex) { }
+    		for (int j=0; j < _maxCount; j++) {
+    			_r += (j % _size) % _maxCount;
+    			_r += _maxCount;
+    		}
+    		_r = origR;
+    		backup();
+    		calculateNextIteration();
+    	}
     }
 
     /**
