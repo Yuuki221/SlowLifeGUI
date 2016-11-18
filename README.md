@@ -231,7 +231,7 @@ New Result shows that under same initial board the CPU usage of `MainPanel.conve
 
 > Pinning Test
 
-Since the the part I modified in `getNumNeighbors` method is on the return statement, and all other part of the code depend on other varibles, in order to unit test the method, I create a fake method that mock the behavior of `getNumNeighbors()` but not the same: ['Fake' method of getNumNeighbors](GMF/src/MockGetNumNeighbors.java), and I use this method to do unit testing: [Unit Test](GML/src/GetNumNTest.java).
+Since the the part I modified in `getNumNeighbors` method is on the return statement, and all other part of the code depend on other varibles, in order to unit test the method, I create a fake method that mock the behavior of `getNumNeighbors()` but not the same: ['Fake' method of getNumNeighbors](GMF/src/MockGetNumNeighbors.java), and I use this method to do unit testing: [Unit Test](GMF/src/GetNumNTest.java).
 
 
 
