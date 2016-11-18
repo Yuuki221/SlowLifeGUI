@@ -55,11 +55,15 @@ Original method above takes around 40% of CPU usage when running continuously. I
     }
 ```
 
-> Spinning Result 
+> Refactoring Result 
 
 <div style="text-align: center;">
 	<img src="scrnshots/modi_1.png" alt="visualVM screenshots after refactoring" />
 </div>
+
+> Pinning Test
+
+[Unit test for convertToInt](GMF/src/ConvertToIntTestOne.java)
 
 ## Method2: `MainPanel.runContinuous()`
 
@@ -133,10 +137,13 @@ After I review the code, I found the part of code in the method did not performi
 > After refactoring 
 
 <div style="text-align: center;">
-    <img src="scrnshots/runcount-good.png" alt="performance after modify run continuously" />
+    <img src="scrnshots/runcont-good.png" alt="performance after modify run continuously" />
 </div>
 
-### Pining Test
+> Pinning Test
+
+I did not write unit test for this function, since the method do not have return method and the justification of the modification can be proved by follow the logic of the code in the method. Also, the change does not damage any function of the game. 
+
 
 ## Method 3: `MainPanel.getNumNeighbors(int x, int y)`
 
@@ -220,6 +227,18 @@ New Result shows that under same initial board the CPU usage of `MainPanel.conve
 <div style="text-align: center;" >
     <img src="scrnshots/getNumN-good.png" alt="getNumNeighbors after refactoring" />
 </div>
+
+
+> Pinning Test
+
+Since the the part I modified in `getNumNeighbors` method is on the return statement, and all other part of the code depend on other varibles, in order to unit test the method, I create a fake method that mock the behavior of `getNumNeighbors()` but not the same: ['Fake' method of getNumNeighbors](GMF/src/MockGetNumNeighbors.java), and I use this method to do unit testing: [Unit Test](GML/src/GetNumNTest.java).
+
+
+
+
+
+
+
 
 
 
