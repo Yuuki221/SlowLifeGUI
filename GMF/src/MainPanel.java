@@ -31,7 +31,11 @@ public class MainPanel extends JPanel {
 	return _cells;
     }
 
+<<<<<<< HEAD
+    public int convertToInt(int x) {
+=======
     private int convertToInt(int x) {
+>>>>>>> 9df5ac18df27a3f0358d9ad171e935101f736b00
     	int c = 0;
     	StringBuilder padding = new StringBuilder("0");
     	while (c < _r) {
@@ -39,7 +43,12 @@ public class MainPanel extends JPanel {
     		c++;
     	}
     	
+<<<<<<< HEAD
+    	// String n = padding.toString() + String.valueOf(x);
+    	String n = padding.append(x).toString();
+=======
     	String n = padding.toString() + String.valueOf(x);
+>>>>>>> 9df5ac18df27a3f0358d9ad171e935101f736b00
     	int q = Integer.parseInt(n);
     	return q;
     }
@@ -67,7 +76,12 @@ public class MainPanel extends JPanel {
 	if (_cells[x][upY].getAlive())        { numNeighbors++; }
 	if (_cells[x][downY].getAlive())      { numNeighbors++; }
 	    
+<<<<<<< HEAD
+	// return convertToInt(numNeighbors);
+	return numNeighbors;
+=======
 	return convertToInt(numNeighbors);
+>>>>>>> 9df5ac18df27a3f0358d9ad171e935101f736b00
 
     }
 
@@ -99,7 +113,11 @@ public class MainPanel extends JPanel {
 		_cells[j][k].setAlive(nextIter[j][k]);
 	    }
 	}
+<<<<<<< HEAD
+		setVisible(true);
+=======
 	setVisible(true);
+>>>>>>> 9df5ac18df27a3f0358d9ad171e935101f736b00
     }
 
     /**
@@ -112,7 +130,11 @@ public class MainPanel extends JPanel {
 	boolean[][] nextIter = new boolean[_size][_size];
 	for (int j = 0; j < _size; j++) {
 	    for (int k = 0; k < _size; k++) {
+<<<<<<< HEAD
+	    	nextIter[j][k] = iterateCell(j, k);
+=======
 		nextIter[j][k] = iterateCell(j, k);
+>>>>>>> 9df5ac18df27a3f0358d9ad171e935101f736b00
 	    }
 	}
 
@@ -128,8 +150,13 @@ public class MainPanel extends JPanel {
 	_backupCells = new Cell[_size][_size];
 	for (int j = 0; j < _size; j++) {
 	    for (int k = 0; k < _size; k++) {
+<<<<<<< HEAD
+		_backupCells[j][k] = new Cell();
+		_backupCells[j][k].setAlive(_cells[j][k].getAlive());
+=======
 	    	_backupCells[j][k] = new Cell();
 	    	_backupCells[j][k].setAlive(_cells[j][k].getAlive());
+>>>>>>> 9df5ac18df27a3f0358d9ad171e935101f736b00
 	    }
 	}
     }
@@ -189,20 +216,39 @@ public class MainPanel extends JPanel {
 	// if they are alive, add an "X" to
 	// the String, if dead, a ".".
 
+<<<<<<< HEAD
+	// String toWrite = "";
+    StringBuilder toWrite = new StringBuilder();
+	
+	for (int j = 0; j < _size; j++) {
+	    for(int k = 0; k < _size; k++) {
+	    /**
+=======
 	String toWrite = "";
 	
 	for (int j = 0; j < _size; j++) {
 	    for(int k = 0; k < _size; k++) {
+>>>>>>> 9df5ac18df27a3f0358d9ad171e935101f736b00
 		if (_cells[j][k].getAlive()) {
 		    toWrite += _cells[j][k].toString();
 		} else {
 		    toWrite += _cells[j][k].toString();
 		}
+<<<<<<< HEAD
+		*/
+	    	toWrite.append(_cells[j][k].toString());
+	    }
+	    //toWrite += "\n";
+	    toWrite.append("\n");
+	}
+	return toWrite.toString();
+=======
 		    
 	    }
 	    toWrite += "\n";
 	}
 	return toWrite;
+>>>>>>> 9df5ac18df27a3f0358d9ad171e935101f736b00
     }
 
     /**
@@ -222,15 +268,30 @@ public class MainPanel extends JPanel {
     	_running = true;
     	while (_running) {
     		System.out.println("Running...");
+<<<<<<< HEAD
+    		/**
+    		int origR = _r;
+ 
+    		try {
+    			Thread.sleep(20);
+    		} catch (InterruptedException iex) { }
+
+    		
+=======
     		int origR = _r;
     		try {
     			Thread.sleep(20);
     		} catch (InterruptedException iex) { }
+>>>>>>> 9df5ac18df27a3f0358d9ad171e935101f736b00
     		for (int j=0; j < _maxCount; j++) {
     			_r += (j % _size) % _maxCount;
     			_r += _maxCount;
     		}
     		_r = origR;
+<<<<<<< HEAD
+  			**/
+=======
+>>>>>>> 9df5ac18df27a3f0358d9ad171e935101f736b00
     		backup();
     		calculateNextIteration();
     	}
